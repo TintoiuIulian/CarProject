@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/pageheader :: head">
+
+<body>
+<h1>CarRental</h1>
+</body>
+
+<div th:replace="fragment/pagefooter :: pagefooter"></div>
+<button type="button" class="btn btn-primary btn-lg">Add car for renting</button>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Model</th>
+      <th scope="col">Type</th>
+      <th scope="col">PlateID</th>
+      <th scope="col">RentalPrice</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mercedes</td>
+      <td>E-classe</td>
+      <td>Sedan</td>
+      <td>BV-01-EFL</td>
+      <td>500 lei/zi</td>
+      <td><button type="button" class="btn btn-primary btn-lg">Edit</button>
+<button type="button" class="btn btn-secondary btn-lg">Rent</button></td>
+    </tr>
+    <tr>
+       <th scope="row">2</th>
+      <td>BMW</td>
+      <td>M3e46</td>
+      <td>Coupe</td>
+      <td>B-69-POW</td>
+      <td>1200 lei/zi</td>
+      <td><button type="button" class="btn btn-primary btn-lg">Edit</button>
+<button type="button" class="btn btn-secondary btn-lg">Rent</button></td>
+</tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Volkswagen</td>
+      <td>Caddy</td>
+      <td>Van</td>
+      <td>SB-02-VAN</td>
+      <td>1000 lei/zi</td>
+      <td><button type="button" class="btn btn-primary btn-lg">Edit</button>
+<button type="button" class="btn btn-secondary btn-lg">Rent</button></td>
+
+
+
