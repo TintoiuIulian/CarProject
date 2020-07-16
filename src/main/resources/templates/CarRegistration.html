@@ -1,32 +1,43 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragment/pageheader :: head">
 <body>
-<h1>Car Registration</h1>
+	<h1>Car Registration</h1>
+
+	<form action="" th:action="@{/submitCarRegistration}" th:object=${car}>
+		<div class="form-group row col-lg-4">
+			<label for="AddCarBrand">Car Brand:</label> <input type="text"
+				class="form-control" id="AddCarBrand"
+				placeholder="Mercedes...Audi...BMW">
+
+		</div>
+		<div class="form-group">
+			<label for="AddCarModell">Car Model:</label> <input type="text"
+				class="form-control" id="AddCarModell"
+				placeholder="S-classe...A4....Passat">
+		</div>
+		<div class="form-group">
+			<label for="AddCarType">Car Type:</label> <input type="text"
+				class="form-control" id="AddCarType"
+				placeholder="Sedan..Combi..Coupe..Van">
+		</div>
+		<div class="form-group">
+			<label for="AddCarPlate">Car Plate:</label> <input type="text"
+				class="form-control" id="CarPlate" placeholder="BV-00-ABC">
+		</div>
+
+		<div class="form-group">
+			<label for="AddCarRentalValue">Rental Value:</label> <input
+				type="text" class="form-control" id="RentalValue"
+				placeholder="120$/day">
+		</div>
+		<div class="form-group row col-lg-4">
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+		</div>
+	</form>
 </body>
+
 <div th:replace="fragment/pagefooter :: pagefooter"></div>
-<form>
-  <div class="form-group">
-    <label for="AddCarBrand">Car Brand:</label>
-    <input type="name" class="form-control" id="AddCarBrand" placeholder="Mercedes...Audi...BMW" >
-  </div>
-<div class="form-group">
-    <label for="AddCarModell">Car Model:</label>
-    <input type="name" class="form-control" id="AddCarModell" placeholder="S-classe...A4....Passat" >
-  </div>
-  <div class="form-group">
-    <label for="AddCarType">Car Type:</label>
-    <input type="name" class="form-control" id="AddCarType" placeholder="Sedan..Combi..Coupe..Van" >
-  </div>
-  <div class="form-group">
-    <label for="AddCarPlate">Car Plate:</label>
-    <input type="text" class="form-control" id="CarPlate" placeholder="BV-00-ABC">
-  </div>
-   </div>
-  <div class="form-group">
-    <label for="AddCarRentalValue">Rental Value:</label>
-    <input type="text" class="form-control" id="RentalValue" placeholder="120$/day">
-  </div>
-<a href="OverviewPage">
-  <button type="button" class="btn btn-primary">Submit</button>
-  </a>
+
 </html>
