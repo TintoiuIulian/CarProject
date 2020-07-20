@@ -16,11 +16,16 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.model.Cars;
+import com.example.model.Garage;
 import com.example.repository.CarsRepository;
 import com.example.service.CarService;
+import com.example.service.GarageService;
 
 @Controller
 public class CarGarageController {
+
+	@Autowired
+	public GarageService garageService;
 
 	@Autowired
 	public CarService carService;
@@ -39,7 +44,8 @@ public class CarGarageController {
 		model.addAttribute("carList", vehicle);
 		carService.getCars();
 
-		// Read all employees from database
+		List<Garage> garage = garageService.getGarage();
+		
 
 		mav.setViewName("OverviewPage");
 		return mav;
