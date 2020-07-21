@@ -3,18 +3,23 @@ package com.example.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.model.Cars;
+import com.example.model.Car;
 
 public interface CarService {
 
-	public List<Cars> getCars();
+	public List<Car> getCars();
 
-	public int saveCars(Cars car);
+	public int saveCars(Car car);
 
-	public int updateCars(Cars car);
+	public int updateCars(Car car);
 
 	public int deleteCars(int carId);
 
-	public Optional<Cars> getCarsById(int carId);
+	public Optional<Car> getCarsById(int carId);
+
+	public void deleteById(int carId) ;
+		
+		
+	
 
 }

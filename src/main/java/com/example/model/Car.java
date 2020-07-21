@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "t_cars")
-public class Cars {
+@Table(name = "t_car")
+public class Car {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,20 +19,20 @@ public class Cars {
 	@Column(name = "DOORS")
 	private int doors;
 
-	@Column(name = "PLATE NUMBER")
+	@Column(name = "PLATENUMBER")
 	private String platenumber;
 
 	@Column(name = "BRAND")
 	private String brand;
 
-	@Column(name = "RENTING PRICE")
+	@Column(name = "RENTINGPRICE")
 	private String rentingprice;
 
-	public Cars() {
+	public Car() {
 
 	}
 
-	public Cars(int id, int doors, String platenumber, String brand, String rentingprice) {
+	public Car(int id, int doors, String platenumber, String brand, String rentingprice) {
 		super();
 		this.id = id;
 		this.doors = doors;

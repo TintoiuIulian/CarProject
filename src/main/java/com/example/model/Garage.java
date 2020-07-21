@@ -19,13 +19,13 @@ public class Garage {
 	@Column(name = "DOORS")
 	private int doors;
 
-	@Column(name = "PLATE NUMBER")
+	@Column(name = "PLATENUMBER")
 	private String platenumber;
 
 	@Column(name = "BRAND")
 	private String brand;
 
-	@Column(name = "RENTING PRICE")
+	@Column(name = "RENTINGPRICE")
 	private String rentingprice;
 
 	public Garage() {

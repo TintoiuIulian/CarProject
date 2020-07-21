@@ -27,16 +27,22 @@
 
 			</tr>
 
-			<tr th:each="vehicle : ${carList}">
-				<td th:text="${vehicle.id}" />
-				<td th:text="${vehicle.doors}" />
-				<td th:text="${vehicle.platenumber}" />
-				<td th:text="${vehicle.brand}" />
-				<td th:text="${vehicle.rentingprice}" />
+			<tr th:each="car : ${carList}">
+				<td th:text="${car.id}" />
+				<td th:text="${car.doors}" />
+				<td th:text="${car.platenumber}" />
+				<td th:text="${car.brand}" />
+				<td th:text="${car.rentingprice}" />
+				<td>
 
-				<td><button type="button" class="btn btn-primary btn-lg">Edit</button>
-
-					<button type="button" class="btn btn-secondary btn-lg">Rent</button></td>
+					<form th:action="@{deleteCar}" th:object=${car} method="post" style="display: inline-block;">
+						<div class="d-none">
+							<input name="carId" th:value="*{id}">
+						</div>
+						<button type="submit" class="btn btn-primary btn-lg">Delete</button>
+					</form>
+					<button type="button" class="btn btn-secondary btn-lg">Rent</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>

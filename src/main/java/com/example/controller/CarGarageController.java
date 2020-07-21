@@ -12,10 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.model.Cars;
+import com.example.model.Car;
 import com.example.model.Garage;
 import com.example.repository.CarsRepository;
 import com.example.service.CarService;
@@ -39,15 +40,24 @@ public class CarGarageController {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("Hello from OverviewPageRequestMapping");
 
-		List<Cars> vehicle = carService.getCars();
+		List<Car> vehicles = carService.getCars();
 
-		model.addAttribute("carList", vehicle);
-		carService.getCars();
+		model.addAttribute("carList", vehicles);
 
-		List<Garage> garage = garageService.getGarage();
-		
+		// List<Garage> garage = garageService.getGarage();
 
 		mav.setViewName("OverviewPage");
+		return mav;
+	}
+
+	@RequestMapping(value = "/deleteCar", method = RequestMethod.POST)
+	public ModelAndView deleteCar(@RequestParam("carId") int carId) {
+
+		ModelAndView mav = new ModelAndView();
+
+		carService.deleteById(carId);
+
+		mav.setViewName("redirect:/OverviewPage");
 		return mav;
 	}
 
@@ -56,7 +66,7 @@ public class CarGarageController {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("Hello from CarRegistrationRequestMapping");
 
-		Cars car = new Cars();
+		Car car = new Car();
 		model.addAttribute("car", car);
 
 		mav.setViewName("CarRegistration");
@@ -65,7 +75,7 @@ public class CarGarageController {
 	}
 
 	@RequestMapping(value = "/submitCarRegistration", method = RequestMethod.GET)
-	public ModelAndView CarRegistrationRequestMapping(@ModelAttribute Cars car) {
+	public ModelAndView CarRegistrationRequestMapping(@ModelAttribute Car car) {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("Hello from submitCarRegistration");
 		// Save car to database

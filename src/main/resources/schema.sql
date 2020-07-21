@@ -1,5 +1,5 @@
-DROP TABLE t_cars IF EXISTS;
-create table t_cars
+DROP TABLE t_car IF EXISTS;
+create table t_car
 (
 	id integer auto_increment,
 	doors integer,
