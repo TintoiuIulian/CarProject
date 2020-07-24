@@ -9,7 +9,7 @@ public interface CarService {
 
 	public List<Car> getCars();
 
-	public int saveCars(Car car);
+	public void saveCars(Car car);
 
 	public int updateCars(Car car);
 
@@ -17,9 +17,9 @@ public interface CarService {
 
 	public Optional<Car> getCarsById(int carId);
 
-	public void deleteById(int carId) ;
-		
-		
+	public void deleteById(int carId);
 	
+
+
 
 }

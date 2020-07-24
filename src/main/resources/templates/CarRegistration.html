@@ -4,37 +4,42 @@
 	<h1>Car Registration</h1>
 
 	<form action="" th:action="@{/submitCarRegistration}" th:object=${car}
-		method="get">
+		method="post" >
 
+		<div class="d-none">
+			<input th:value="${formAction}" th:attr="name='formAction'"
+				type="text">
+		</div>
+			<div class="d-none">
+							<input readonly th:field="*{id}" type="text">
+						</div>
 		<div class="form-group row col-lg-4">
 			<label class="col-lg-4 col-form-label">Car ID: </label> <input
-				class="form-control" th:field="*{id}">
+				class="form-control"  th:field="*{id}">
 		</div>
 
 		<div class="form-group row col-lg-4">
 			<label class="col-lg-4 col-form-label">Number of doors: </label> <input
-				class="form-control" th:field="*{doors}">
+				class="form-control"   th:field="*{doors}">
 		</div>
 
 		<div class="form-group row col-lg-4">
 			<label class="col-lg-4 col-form-label">Plate number: </label> <input
-				class="form-control" th:field="*{platenumber}">
+				class="form-control"   th:field="*{platenumber}">
 		</div>
 
 		<div class="form-group row col-lg-4">
 			<label class="col-lg-4 col-form-label">Brand: </label> <input
-				class="form-control" th:field="*{brand}">
+				class="form-control"   th:field="*{brand}">
 		</div>
 		<div class="form-group row col-lg-4">
 			<label class="col-lg-4 col-form-label">Renting Price: </label> <input
-				class="form-control" th:field="*{rentingprice}">
+				class="form-control"  th:field="*{rentingprice}">
 		</div>
 
 		<div class="form-group row col-lg-4">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" value="submitCar" class="btn btn-primary" id="submitCar">Save Registration</button>
 		</div>
-
-
 
 	</form>
 </body>
