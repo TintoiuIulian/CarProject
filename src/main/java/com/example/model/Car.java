@@ -29,7 +29,6 @@ public class Car {
 	private String rentingprice;
 
 	public Car() {
-
 	}
 
 	public Car(int id, int doors, String platenumber, String brand, String rentingprice) {
@@ -77,8 +76,8 @@ public class Car {
 		return rentingprice;
 	}
 
-	public void setRentingprice(String brand) {
-		this.brand = rentingprice;
+	public void setRentingprice(String rentingprice) {
+		this.rentingprice = rentingprice;
 	}
 
 }
